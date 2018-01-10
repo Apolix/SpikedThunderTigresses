@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class building : MonoBehaviour {
+
 	public GameObject red_turret_of_death;
 	bool build_mode = false;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update ()
+    {
 		if (Input.GetKey(KeyCode.Mouse0)) {
 			build_mode = false;
 		}
@@ -23,8 +20,9 @@ public class building : MonoBehaviour {
 				RaycastHit hit;
 
 				if (Physics.Raycast (ray, out hit)) {
-					Vector3 kerekített_pozíció = new Vector3 (Mathf.Round (hit.transform.position.x), hit.transform.position.y, Mathf.Round (hit.transform.position.z));
-					Instantiate (red_turret_of_death, kerekített_pozíció, Quaternion.identity);
+
+					Vector3 rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), hit.transform.position.y, Mathf.Round (hit.transform.position.z));
+					Instantiate (red_turret_of_death, rounded_position, Quaternion.identity);
 				}
 			}
 		}
