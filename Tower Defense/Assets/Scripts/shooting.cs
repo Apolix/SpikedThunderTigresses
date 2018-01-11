@@ -9,11 +9,6 @@ public class shooting : MonoBehaviour {
 	public float range = 15, attack_speed = 100;
 	float ticker = 0;
 	bool placed = false;
-
-	void Start ()
-    {
-		
-	}
 	
 	void Update ()
     {
@@ -22,15 +17,24 @@ public class shooting : MonoBehaviour {
 		}
 		if (placed == true) {
 
-
 			enemies = GameObject.FindGameObjectsWithTag ("enemy");
-			foreach (GameObject enemy in enemies) {
+            float minDistance = Mathf.Infinity;
+            GameObject nearestEnemy = null;
+
+			foreach (GameObject enemy in enemies)
+            {
 				float distance = Vector3.Distance (transform.position, enemy.transform.position);
-				if (distance < range && ticker == attack_speed) {
-					shoot (enemy);
-				}
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestEnemy = enemy;
+                }
 			}
-		}
+            if (nearestEnemy != null && minDistance <= range && ticker == attack_speed)
+            {
+                shoot(nearestEnemy);
+            }
+        }
 	}
 	void FixedUpdate()
 	{
@@ -40,6 +44,13 @@ public class shooting : MonoBehaviour {
 		print (ticker);
 
 	}
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
 	void shoot(GameObject enemy_v)
 	{
 		Destroy (enemy_v);
