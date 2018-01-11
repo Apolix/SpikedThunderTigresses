@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65244475604228298}
   - component: {fileID: 23652667642763308}
   - component: {fileID: 114317765687634038}
+  - component: {fileID: 114760977488626246}
   m_Layer: 8
   m_Name: red turret of death
   m_TagString: Untagged
@@ -105,4 +106,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57739dc4e9c570542b10ace30edab250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  texture: {fileID: 2100000, guid: 8f0cf07cd9719834c80ff7ed40e4b5f6, type: 2}
+--- !u!114 &114760977488626246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919466077171546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ed28d632e3d9b45a02f8cd72853312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: {fileID: 0}
+  range: 15
+  attack_speed: 100

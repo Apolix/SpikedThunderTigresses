@@ -8,21 +8,27 @@ public class shooting : MonoBehaviour {
 	public GameObject damage;
 	public float range = 15, attack_speed = 100;
 	float ticker = 0;
+	bool placed = false;
 
 	void Start ()
     {
-		print ("itt vagyok ragyogok mint a fekete szurok");
+		
 	}
 	
 	void Update ()
     {
-		enemies= GameObject.FindGameObjectsWithTag ("enemy");
-		foreach (GameObject enemy in enemies)
-        {
-			float distance = Vector3.Distance (transform.position, enemy.transform.position);
-			if (distance < range && ticker == attack_speed)
-            {
-				shoot (enemy);
+		if (Input.GetKey(KeyCode.Mouse0)) {
+			placed = true;
+		}
+		if (placed == true) {
+
+
+			enemies = GameObject.FindGameObjectsWithTag ("enemy");
+			foreach (GameObject enemy in enemies) {
+				float distance = Vector3.Distance (transform.position, enemy.transform.position);
+				if (distance < range && ticker == attack_speed) {
+					shoot (enemy);
+				}
 			}
 		}
 	}

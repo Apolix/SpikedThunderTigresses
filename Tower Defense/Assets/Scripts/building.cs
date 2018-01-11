@@ -15,7 +15,7 @@ public class building : MonoBehaviour {
 
 		if (build_mode == false) {
 			if (Input.GetKeyDown (KeyCode.Alpha1)) {
-
+				build_mode = true;
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit hit;
 

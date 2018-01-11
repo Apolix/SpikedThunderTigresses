@@ -7,8 +7,8 @@ public class placement : MonoBehaviour {
 	Ray ray, ray_tagging;
 	RaycastHit hit, hit_tagging;
 	Vector3 rounded_position;
+	public Material texture;
 
-	public GameObject turret;
 
 	void Update ()
     {
@@ -25,8 +25,7 @@ public class placement : MonoBehaviour {
 			GetComponent<Renderer> ().material.color = Color.green;
 			if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-				GetComponent<Renderer> ().material.color = Color.black;
-				gameObject.AddComponent<shooting> ();
+				GetComponent<Renderer> ().material = texture;
 				Destroy (this);
             }
 		}
