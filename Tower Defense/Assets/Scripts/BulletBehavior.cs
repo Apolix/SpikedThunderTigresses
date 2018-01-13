@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour {
 
-    private Transform target;
+    private GameObject target;
 
-    public float bulletSpeed = 50f;
+    public float bulletSpeed = 50f, damage;
 
-    public void FindTarget(Transform vTarget)
+    public void FindTarget(GameObject vTarget, float vDamage)
     {
         target = vTarget;
+        damage = vDamage;
     }
 	
 	void Update ()
@@ -21,7 +22,7 @@ public class BulletBehavior : MonoBehaviour {
             return;
         }
 
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         float currentDistance = bulletSpeed * Time.deltaTime;
 
         if (direction.magnitude <= currentDistance)
@@ -36,6 +37,14 @@ public class BulletBehavior : MonoBehaviour {
 
     void TargetDamageOnHit()
     {
+        EnemyMovement enemy = target.GetComponent<EnemyMovement>();
+
+        enemy.health -= damage;
+        if (enemy.health <= 0)
+        {
+            Destroy(target);
+        }
+
         Destroy(gameObject);
     }
 }

@@ -11,14 +11,9 @@ public class shooting : MonoBehaviour {
     public Transform partToRotate;
     public Transform firePosition;
 
-    public float range = 15, attack_speed = 2, turnspeed = 10f;
+    public float range = 15, attackSpeed = 2f, turnspeed = 10f, damage = 1f;
     float countdownOfShooting = 0.5f;
 	bool placed = false;
-
-    void Start()
-    {
-
-    }
 
     void UpdateTarget()
     {
@@ -60,7 +55,7 @@ public class shooting : MonoBehaviour {
         if (countdownOfShooting <= 0f)
         {
             Shoot(target);
-            countdownOfShooting = attack_speed;
+            countdownOfShooting = attackSpeed;
         }
         countdownOfShooting -= Time.deltaTime;
     }
@@ -78,7 +73,7 @@ public class shooting : MonoBehaviour {
 
         if (bullet != null)
         {
-            bullet.FindTarget(target.transform);
+            bullet.FindTarget(target, damage);
         }
 	}
 }

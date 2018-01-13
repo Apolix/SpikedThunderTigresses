@@ -3,14 +3,15 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
-    public float speed = 60f;
-
+    public float speed = 20f;
+    public float health = 1f;
     private Transform target;
     private int waitpointIndex = 0;
 
     void Start()
     {
         target = Waitpoints.points[0];
+        health = Random.Range(1, 4);
     }
 
     void Update()

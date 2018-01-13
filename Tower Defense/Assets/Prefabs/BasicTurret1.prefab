@@ -297,5 +297,6 @@ MonoBehaviour:
   partToRotate: {fileID: 4279053488763922}
   firePosition: {fileID: 4601704149782908}
   range: 15
-  attack_speed: 1
+  attackSpeed: 0.5
   turnspeed: 10
+  damage: 1
