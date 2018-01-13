@@ -13,6 +13,7 @@ public class menuscript : MonoBehaviour {
 	public Button exit;
 	// Use this for initialization
 	void Start () {
+		//getcomponentek
 		QuitMenu = QuitMenu.GetComponent<Canvas> ();
 		startgame = startgame.GetComponent<Button> ();
 		exit = exit.GetComponent<Button> ();
@@ -22,6 +23,7 @@ public class menuscript : MonoBehaviour {
 	}
 	public void ExitPress()
 	{
+		//Quitmenu bekapcsolása
 		QuitMenu.enabled = true;
 		startgame.enabled = false;
 		exit.enabled = false;
@@ -30,18 +32,19 @@ public class menuscript : MonoBehaviour {
 	}
 	public void nopress ()
 	{
-		QuitMenu.enabled = false;
+		//quitmenu kikapcsolása
+		QuitMenu.enabled = false; 
 		startgame.enabled = true;
-		exit.enabled = true;
+		exit.enabled = true; 
 		start_br.enabled = true;
-		exit_br.enabled = true;
+		exit_br.enabled = true; 
 	}
 	public void startpress()
 	{
-		SceneManager.LoadScene ("Level01");
+		SceneManager.LoadScene ("Level01"); //betölti a pályát
 	}
 	public void ExitGame()
 	{
-		Application.Quit ();
+		Application.Quit (); //kilép
 	}
 }

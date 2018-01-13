@@ -8,7 +8,7 @@ public class shooting : MonoBehaviour {
 	GameObject[] enemies;
     public Transform PartToRotate;
     public float range = 15, attack_speed = 2, turnspeed = 10f;
-    float countdownOfShooting = 0f;
+    float countdownOfShooting = 0.5f;
 	bool placed = false;
 
     void Start()
