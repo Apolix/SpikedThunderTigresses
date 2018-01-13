@@ -2676,7 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d65d5f0c3ec4fc4eb8ad9cd65c309d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red_turret_of_death: {fileID: 1686466964406014, guid: 5ca17c4fad8e39c45ae57829c04b4ae0,
+  red_turret_of_death: {fileID: 1487412217074972, guid: 5ca17c4fad8e39c45ae57829c04b4ae0,
     type: 2}
 --- !u!1001 &295617365
 Prefab:

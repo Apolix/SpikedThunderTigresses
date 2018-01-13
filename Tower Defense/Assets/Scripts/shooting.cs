@@ -4,46 +4,61 @@ using UnityEngine;
 
 public class shooting : MonoBehaviour {
 
+    GameObject target;
 	GameObject[] enemies;
-	public GameObject damage;
-	public float range = 15, attack_speed = 100;
-	float ticker = 0;
+    public Transform PartToRotate;
+    public float range = 15, attack_speed = 2, turnspeed = 10f;
+    float countdownOfShooting = 0f;
 	bool placed = false;
-	
-	void Update ()
+
+    void Start()
     {
-		if (Input.GetKey(KeyCode.Mouse0)) {
-			placed = true;
-		}
-		if (placed == true) {
 
-			enemies = GameObject.FindGameObjectsWithTag ("enemy");
-            float minDistance = Mathf.Infinity;
-            GameObject nearestEnemy = null;
+    }
+    void UpdateTarget()
+    {
 
-			foreach (GameObject enemy in enemies)
+        enemies = GameObject.FindGameObjectsWithTag("enemy");
+        float minDistance = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < minDistance)
             {
-				float distance = Vector3.Distance (transform.position, enemy.transform.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    nearestEnemy = enemy;
-                }
-			}
-            if (nearestEnemy != null && minDistance <= range && ticker == attack_speed)
-            {
-                shoot(nearestEnemy);
+                minDistance = distance;
+                nearestEnemy = enemy;
             }
         }
-	}
-	void FixedUpdate()
+        if (nearestEnemy != null && minDistance <= range)
+        {
+            target = nearestEnemy;
+        }
+        else { target = null; }
+    }
+	void Update()
 	{
-		if (ticker < attack_speed) {
-			ticker += 1;
-		}
-		print (ticker);
+        if (Input.GetKeyDown(KeyCode.Mouse0) && placed == false)
+        {
+            InvokeRepeating("UpdateTarget", 0f, 0.5f);
+            placed = true;
+        }
+        if (target == null)
+            return;
 
-	}
+        Vector3 direction = target.transform.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
+        PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if (countdownOfShooting <= 0f)
+        {
+            Shoot(target);
+            countdownOfShooting = attack_speed;
+        }
+        countdownOfShooting -= Time.deltaTime;
+    }
 
     void OnDrawGizmosSelected()
     {
@@ -51,9 +66,8 @@ public class shooting : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-	void shoot(GameObject enemy_v)
+	void Shoot(GameObject enemy_v)
 	{
 		Destroy (enemy_v);
-		ticker = 0;
 	}
 }
