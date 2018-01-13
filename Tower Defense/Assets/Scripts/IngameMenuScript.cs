@@ -9,6 +9,7 @@ public class IngameMenuScript : MonoBehaviour {
 	public Canvas standard_menu, build_menu;
 	public GameObject red_turret_of_death;
 	public Image Build_background;
+
 	// Use this for initialization
 	void Start () {
 		build.GetComponent<Button> ();

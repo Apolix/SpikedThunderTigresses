@@ -18,6 +18,10 @@ public class placement : MonoBehaviour {
 		rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), 1, Mathf.Round (hit.transform.position.z));
 		transform.position = rounded_position; //kerekíti a pozícióját a turretnek hogy a kockákra rakja le
 
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Destroy (gameObject); //cancel placing (so enlish much wow)
+		}
+
 		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 10); //még egy raycast ami a tagét nézi meg az turret alatti objektumnak
 
 		if (hit_tagging.transform.gameObject.tag == "ground") //groundnak neveztem el a füvet
