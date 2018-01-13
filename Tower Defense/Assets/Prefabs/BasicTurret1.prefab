@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4251151250577032}
   - component: {fileID: 33905793647374710}
   - component: {fileID: 23217450775674062}
-  - component: {fileID: 114855540219553666}
   m_Layer: 0
   m_Name: TurretHead
   m_TagString: Untagged
@@ -126,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487412217074972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -73.30038, y: -1.9999998, z: -22.569733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4577065222843038}
@@ -164,6 +163,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23658512995813568
 MeshRenderer:
@@ -195,6 +195,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23743840572690140
 MeshRenderer:
@@ -226,6 +227,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33829166797756256
 MeshFilter:
@@ -253,21 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 2100000, guid: 5ea1f80ec3e9aa8499c730e156142b60, type: 2}
---- !u!114 &114855540219553666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1626014523987020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ed28d632e3d9b45a02f8cd72853312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PartToRotate: {fileID: 0}
-  range: 15
-  attack_speed: 100
-  turnspeed: 10
 --- !u!114 &114905236621913474
 MonoBehaviour:
   m_ObjectHideFlags: 1
