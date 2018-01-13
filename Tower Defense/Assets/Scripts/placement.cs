@@ -12,26 +12,26 @@ public class placement : MonoBehaviour {
 
 	void Update ()
     {
-		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		Physics.Raycast(ray, out hit);
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);//megnézi hol van az egér
+		Physics.Raycast(ray, out hit); 
 
 		rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), 1, Mathf.Round (hit.transform.position.z));
-		transform.position = rounded_position;
+		transform.position = rounded_position; //kerekíti a pozícióját a turretnek hogy a kockákra rakja le
 
-		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 10);
+		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 10); //még egy raycast ami a tagét nézi meg az turret alatti objektumnak
 
-		if (hit_tagging.transform.gameObject.tag == "ground")
+		if (hit_tagging.transform.gameObject.tag == "ground") //groundnak neveztem el a füvet
         {
-			GetComponent<Renderer> ().material.color = Color.green;
-			if (Input.GetKeyDown(KeyCode.Mouse0))
+			GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
+			if (Input.GetKeyDown(KeyCode.Mouse0)) 
             {
-				GetComponent<Renderer> ().material = texture;
-				Destroy (this);
+				GetComponent<Renderer> ().material = texture; //simma texture lesz
+				Destroy (this); //elpusztítja ezt a scriptet
             }
 		}
         else
         {
-			GetComponent<Renderer> ().material.color = Color.red;
+			GetComponent<Renderer> ().material.color = Color.red;//itt kéne pirosnak lennie a turretnek (kísértetiesen nem működik de nincs error)
 		}
 	}
 }
