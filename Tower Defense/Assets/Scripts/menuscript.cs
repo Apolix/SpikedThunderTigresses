@@ -8,12 +8,16 @@ public class menuscript : MonoBehaviour {
 
 	public Canvas QuitMenu;
 	public Button startgame;
+	public Image start_br;
+	public Image exit_br;
 	public Button exit;
 	// Use this for initialization
 	void Start () {
 		QuitMenu = QuitMenu.GetComponent<Canvas> ();
 		startgame = startgame.GetComponent<Button> ();
 		exit = exit.GetComponent<Button> ();
+		start_br = start_br.GetComponent<Image> ();
+		exit_br = start_br.GetComponent<Image> ();
 		QuitMenu.enabled = false;
 	}
 	public void ExitPress()
@@ -21,12 +25,16 @@ public class menuscript : MonoBehaviour {
 		QuitMenu.enabled = true;
 		startgame.enabled = false;
 		exit.enabled = false;
+		start_br.enabled = false;
+		exit_br.enabled = false;
 	}
 	public void nopress ()
 	{
 		QuitMenu.enabled = false;
 		startgame.enabled = true;
 		exit.enabled = true;
+		start_br.enabled = true;
+		exit_br.enabled = true;
 	}
 	public void startpress()
 	{
