@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class shooting : MonoBehaviour {
 
-    GameObject target;
-	GameObject[] enemies;
-    public Transform PartToRotate;
+    private GameObject target;
+	private GameObject[] enemies;
+    public GameObject bulletPrefab;
+
+    public Transform partToRotate;
+    public Transform firePosition;
+
     public float range = 15, attack_speed = 2, turnspeed = 10f;
     float countdownOfShooting = 0.5f;
 	bool placed = false;
@@ -15,9 +19,9 @@ public class shooting : MonoBehaviour {
     {
 
     }
+
     void UpdateTarget()
     {
-
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         float minDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
@@ -39,6 +43,7 @@ public class shooting : MonoBehaviour {
     }
 	void Update()
 	{
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && placed == false)
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -49,8 +54,8 @@ public class shooting : MonoBehaviour {
 
         Vector3 direction = target.transform.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
-        PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (countdownOfShooting <= 0f)
         {
@@ -59,7 +64,7 @@ public class shooting : MonoBehaviour {
         }
         countdownOfShooting -= Time.deltaTime;
     }
-
+   
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -68,6 +73,12 @@ public class shooting : MonoBehaviour {
 
 	void Shoot(GameObject enemy_v)
 	{
-		Destroy (enemy_v);
+        GameObject whereToGo = (GameObject)Instantiate(bulletPrefab, firePosition.position, firePosition.rotation);
+        BulletBehavior bullet = whereToGo.GetComponent<BulletBehavior>();
+
+        if (bullet != null)
+        {
+            bullet.FindTarget(target.transform);
+        }
 	}
 }
