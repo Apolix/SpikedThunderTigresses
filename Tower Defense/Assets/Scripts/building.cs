@@ -21,7 +21,7 @@ public class building : MonoBehaviour {
 
 				if (Physics.Raycast (ray, out hit)) {
 
-					Vector3 rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), hit.transform.position.y, Mathf.Round (hit.transform.position.z));
+					Vector3 rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), hit.transform.position.y + 1, Mathf.Round (hit.transform.position.z));
 					Instantiate (red_turret_of_death, rounded_position, Quaternion.identity);
 				}
 			}
