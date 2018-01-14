@@ -15,6 +15,7 @@ public class WaveSpawner : MonoBehaviour {
 
     void Update()
     {
+        //Wave-ek ellindítása és időzítése
         if (countdown <= 0)
         {
             StartCoroutine(SpawnWave());
@@ -27,6 +28,7 @@ public class WaveSpawner : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
+        //Ellenségek spawnoltatása
         EnemyCount = Random.Range(1, 11);
 
         for (int i = 0; i < EnemyCount; i++)
