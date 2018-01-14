@@ -7,6 +7,7 @@ public class building : MonoBehaviour {
 
     public GameObject red_turret_of_death;
 	public Text gold_txt;
+	int cost = 0;
 	bool build_mode = false;
 
 	public int gold = 20, ticker = 0;
@@ -15,9 +16,15 @@ public class building : MonoBehaviour {
     {
 		gold_txt.text = gold.ToString (); //ki legyen irva mennyi goldod van
 
-		if (Input.GetKeyDown(KeyCode.Mouse1)) {
+		if (Input.GetKeyDown(KeyCode.Mouse1) ) {
 			build_mode = false;  // build mode ne lehessen egymásba stackelni
+			gold = gold - cost;
 		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			cost = 0;
+			build_mode = false;
+		}
+		print (build_mode);
 	}
 	void FixedUpdate()
 	{
@@ -31,7 +38,7 @@ public class building : MonoBehaviour {
 	{
 		if (build_mode == false && gold > 9) {
 			build_mode = true;
-			gold = gold - 10;
+			cost = 10;
 			build (red_turret_of_death); //click esemény a turretgombhoz a shopban azért van külön metódusba mert igy később egyszerű lesz 
 		}
 	}

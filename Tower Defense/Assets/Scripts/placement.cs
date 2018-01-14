@@ -19,7 +19,7 @@ public class placement : MonoBehaviour {
 		transform.position = rounded_position; //kerekíti a pozícióját a turretnek hogy a kockákra rakja le
 
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Destroy (gameObject); //cancel placing (so enlish much wow)
+			Destroy (gameObject); //cancel placing (so english much wow)
 		}
 
 		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 10); //még egy raycast ami a tagét nézi meg az turret alatti objektumnak

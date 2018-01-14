@@ -39,7 +39,7 @@ public class shooting : MonoBehaviour {
 	void Update()
 	{
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && placed == false)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && placed == false)
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
             placed = true;
