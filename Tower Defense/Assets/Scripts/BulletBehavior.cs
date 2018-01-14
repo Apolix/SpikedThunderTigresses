@@ -10,18 +10,21 @@ public class BulletBehavior : MonoBehaviour {
 
     public void FindTarget(GameObject vTarget, float vDamage)
     {
+        //Változók beállítása másik scriptől
         target = vTarget;
         damage = vDamage;
     }
 	
 	void Update ()
     {
+        //Óvatosság
         if (target == null)
         {
             Destroy(gameObject);
             return;
         }
 
+        //Bullet mozgása
         Vector3 direction = target.transform.position - transform.position;
         float currentDistance = bulletSpeed * Time.deltaTime;
 
@@ -37,6 +40,7 @@ public class BulletBehavior : MonoBehaviour {
 
     void TargetDamageOnHit()
     {
+        //Ellenség életének csökentése a sebzés alapján
         EnemyMovement enemy = target.GetComponent<EnemyMovement>();
 
         enemy.health -= damage;
