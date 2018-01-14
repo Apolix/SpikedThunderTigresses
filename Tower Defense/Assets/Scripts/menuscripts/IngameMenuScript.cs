@@ -25,6 +25,12 @@ public class IngameMenuScript : MonoBehaviour {
 		Build_background.enabled = false;
 
 	}
+	public void exitclick()
+	{
+		build_menu.enabled = false;
+		build.enabled = true;
+		Build_background.enabled = true;
+	}
 
 
 }
