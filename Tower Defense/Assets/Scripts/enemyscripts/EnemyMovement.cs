@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         //A Ellenség életének és index számának beállítása
         target = Waitpoints.points[0];    
-        health = Random.Range(1, 3);
+        health = Random.Range(health, health + 2);
     }
 
     void Update()

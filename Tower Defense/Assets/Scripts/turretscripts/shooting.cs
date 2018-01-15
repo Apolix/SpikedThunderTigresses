@@ -11,7 +11,12 @@ public class shooting : MonoBehaviour {
     public Transform partToRotate;
     public Transform firePosition;
 
-    public float range = 15, attackSpeed = 2f, turnspeed = 10f, damage = 1f;
+    [Header("Stats")]
+    public float range = 15;
+    public float attackSpeed = 2f;
+    public float turnspeed = 10f; 
+    public float damage = 1f;
+
     float countdownOfShooting = 0.5f;
 	bool placed = false;
 

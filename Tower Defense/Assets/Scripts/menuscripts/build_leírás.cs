@@ -21,11 +21,6 @@ public class build_leírás : MonoBehaviour {
 		falsing (turret1_bp, turret1_txt);
 	}
 
-
-
-
-
-
 	void components(Image im_v, Text txt_v)
 	{
 		im_v.GetComponent<Image> ();
