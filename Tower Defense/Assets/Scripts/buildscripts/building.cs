@@ -36,9 +36,9 @@ public class building : MonoBehaviour {
 	}
 	public void turrer1_click()
 	{
-		if (build_mode == false && gold > 9) {
+		if (build_mode == false && gold > 19) {
 			build_mode = true;
-			cost = 10;
+			cost = 20;
 			build (red_turret_of_death); //click esemény a turretgombhoz a shopban azért van külön metódusba mert igy később egyszerű lesz 
 		}
 	}

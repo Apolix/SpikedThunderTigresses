@@ -193,7 +193,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23060435571182974
 MeshRenderer:
@@ -225,7 +224,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23902133682708886
 MeshRenderer:
@@ -257,7 +255,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33800620380750778
 MeshFilter:
@@ -312,7 +309,7 @@ MonoBehaviour:
     type: 2}
   partToRotate: {fileID: 4279053488763922}
   firePosition: {fileID: 4601704149782908}
-  range: 15
+  range: 20
   attackSpeed: 0.5
   turnspeed: 10
   damage: 1
