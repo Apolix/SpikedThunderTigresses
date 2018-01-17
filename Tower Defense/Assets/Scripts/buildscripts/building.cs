@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class building : MonoBehaviour {
 
-    public GameObject red_turret_of_death;
-	public Text gold_txt;
-	int cost = 0;
+    public GameObject red_turret_of_death, sniper_tower;
+	public Text gold_txt; 
+	int cost = 0, ticker = 0;
 	bool build_mode = false;
 
-	public int gold = 20, ticker = 0;
+	public int gold = 20, turret_1_cost = 20, sniper_tower_cost = 40;
 
 	void Update ()
     {
@@ -24,7 +24,6 @@ public class building : MonoBehaviour {
 			cost = 0;
 			build_mode = false;
 		}
-		print (build_mode);
 	}
 	void FixedUpdate()
 	{
@@ -36,10 +35,19 @@ public class building : MonoBehaviour {
 	}
 	public void turrer1_click()
 	{
-		if (build_mode == false && gold > 19) {
+		if (build_mode == false && gold > turret_1_cost - 1) {
 			build_mode = true;
-			cost = 20;
+			cost = turret_1_cost;
 			build (red_turret_of_death); //click esemény a turretgombhoz a shopban azért van külön metódusba mert igy később egyszerű lesz 
+		}
+	}
+
+	public void sniper_tower_click()
+	{
+		if (build_mode == false && gold > sniper_tower_cost - 1) {
+			build_mode = true;
+			cost = sniper_tower_cost;
+			build (sniper_tower); //click esemény a turretgombhoz a shopban azért van külön metódusba mert igy később egyszerű lesz 
 		}
 	}
 	public void build(GameObject turret_v)

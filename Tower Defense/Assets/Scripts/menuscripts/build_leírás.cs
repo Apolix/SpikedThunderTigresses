@@ -4,14 +4,17 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class build_leírás : MonoBehaviour {
-	public Image turret1_bp;
-	public Text turret1_txt;
+	public Image turret1_bp,sniper_tower_bp;
+	public Text turret1_txt, sniper_tower_txt;
 	void Start()
 	{
 		components (turret1_bp, turret1_txt);
 		falsing (turret1_bp, turret1_txt);
+		components (sniper_tower_bp, sniper_tower_txt);
+		falsing (sniper_tower_bp, sniper_tower_txt);
 
 	}
+
 	public void cursorhover_turret1()
 	{
 		truing (turret1_bp, turret1_txt);
@@ -20,6 +23,16 @@ public class build_leírás : MonoBehaviour {
 	{
 		falsing (turret1_bp, turret1_txt);
 	}
+
+	public void cursorhover_sniper()
+	{
+		truing (sniper_tower_bp, sniper_tower_txt);
+	}
+	public void cursorout_sniper()
+	{
+		falsing (sniper_tower_bp, sniper_tower_txt);
+	}
+
 
 	void components(Image im_v, Text txt_v)
 	{
