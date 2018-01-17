@@ -14119,6 +14119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1580888759}
   speed: 15
+  scrollspeed: 600
 --- !u!143 &1580888759
 CharacterController:
   m_ObjectHideFlags: 0
