@@ -79,9 +79,7 @@ public class sniper_tower_shooting : MonoBehaviour {
 		BulletBehavior bullet = whereToGo.GetComponent<BulletBehavior>();
 
 		float distance = Vector3.Distance(transform.position, enemy_v.transform.position);
-
-		damage = damage * distance;
-		attackSpeed = Mathf.Round (distance / osztó);
+		damage = distance / osztó;
 
 		if (bullet != null)
 		{
