@@ -13,6 +13,7 @@ public class BulletBehavior : MonoBehaviour {
         //Változók beállítása másik scriptől
         target = vTarget;
         damage = vDamage;
+		print (vDamage);
     }
 	
 	void Update ()
