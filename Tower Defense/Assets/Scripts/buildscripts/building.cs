@@ -7,7 +7,7 @@ public class building : MonoBehaviour {
 
     public GameObject red_turret_of_death, sniper_tower;
 	public Text gold_txt; 
-	int cost = 0, ticker = 0;
+	int cost = 0;
 	bool build_mode = false;
 
 	public int gold = 20, turret_1_cost = 20, sniper_tower_cost = 40;
@@ -25,14 +25,8 @@ public class building : MonoBehaviour {
 			build_mode = false;
 		}
 	}
-	void FixedUpdate()
-	{
-		ticker += 1;
-		if (ticker == 30) { 
-			ticker = 0;
-			gold += 1; // ticker a goldhoz
-		}
-	}
+
+
 	public void turrer1_click()
 	{
 		if (build_mode == false && gold > turret_1_cost - 1) {
@@ -50,6 +44,8 @@ public class building : MonoBehaviour {
 			build (sniper_tower); //click esemény a turretgombhoz a shopban azért van külön metódusba mert igy később egyszerű lesz 
 		}
 	}
+
+
 	public void build(GameObject turret_v)
 	{
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); //megnézi hol van az egér

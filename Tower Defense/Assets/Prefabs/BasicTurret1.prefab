@@ -193,6 +193,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23334192027993406
 MeshRenderer:
@@ -224,6 +225,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23956302807234678
 MeshRenderer:
@@ -255,6 +257,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33013522841164534
 MeshFilter:
@@ -293,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ed28d632e3d9b45a02f8cd72853312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1169880751632740, guid: 072ecc9f40771cc438e5ac3b5d40c7ab,
+  bulletPrefab: {fileID: 1404359214448064, guid: 072ecc9f40771cc438e5ac3b5d40c7ab,
     type: 2}
   partToRotate: {fileID: 4091260320077984}
   firePosition: {fileID: 4895762531789084}

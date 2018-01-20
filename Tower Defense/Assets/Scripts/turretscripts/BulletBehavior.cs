@@ -5,7 +5,9 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour {
 
     private GameObject target;
-
+	GameObject gamemanager; 
+	private building gold;
+	public int gold_killenként = 10;
     public float bulletSpeed = 50f, damage;
 
     public void FindTarget(GameObject vTarget, float vDamage)
@@ -15,7 +17,11 @@ public class BulletBehavior : MonoBehaviour {
         damage = vDamage;
 		print (vDamage);
     }
-	
+	void Start()
+	{
+		gamemanager = GameObject.FindGameObjectWithTag ("manager");
+		gold = gamemanager.GetComponent<building> ();
+	}
 	void Update ()
     {
         //Óvatosság
@@ -47,6 +53,7 @@ public class BulletBehavior : MonoBehaviour {
         enemy.health -= damage;
         if (enemy.health <= 0)
         {
+			gold.gold += gold_killenként; // 10 goldot kapp minden kill után
             Destroy(target);
         }
 

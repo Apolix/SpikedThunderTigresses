@@ -6,6 +6,7 @@ public class camera_movement : MonoBehaviour {
 	public CharacterController player;
 	float moveEH, moveJB, zoom;
 	public float speed, scrollspeed;
+	public float zoom_min = 20, zoom_max = 66, EH_lock_min,EH_lock_max, JB_lock_min, JB_lock_max;
 	Vector3 movement;
 	// Use this for initialization
 	void Start () {
@@ -18,13 +19,15 @@ public class camera_movement : MonoBehaviour {
 		moveEH = Input.GetAxis ("Vertical") * speed;
 		zoom = Input.GetAxis ("Mouse ScrollWheel") * scrollspeed;
 
-		if (transform.position.y > 66 && zoom > 0) {
+		if (transform.position.y > zoom_max && zoom > 0 || transform.position.y < zoom_min && zoom < 0) {
 			zoom = 0;
 		}
-		if (transform.position.y < 20 && zoom < 0) {
-			zoom = 0;
+		if (transform.position.x > EH_lock_max && -moveEH > 0 || transform.position.x < EH_lock_min && -moveEH < 0) {
+			moveEH = 0;
 		}
-
+		if (transform.position.z > JB_lock_max && moveJB > 0 || transform.position.z < JB_lock_min && moveJB < 0) {
+			moveJB = 0;
+		}
 		Vector3 movement = new Vector3 (-moveEH, zoom, moveJB);
 		player.Move (movement * Time.deltaTime);
 	}
