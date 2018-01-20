@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour {
     private GameObject target;
 	GameObject gamemanager; 
 	private building gold;
+	private WaveSpawner spawner;
 	public int gold_killenként = 10;
     public float bulletSpeed = 50f, damage;
 
@@ -20,6 +21,7 @@ public class BulletBehavior : MonoBehaviour {
 	{
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
 		gold = gamemanager.GetComponent<building> ();
+		spawner = gamemanager.GetComponent<WaveSpawner> ();
 	}
 	void Update ()
     {
@@ -53,6 +55,7 @@ public class BulletBehavior : MonoBehaviour {
         if (enemy.health <= 0)
         {
 			gold.gold += gold_killenként; // 10 goldot kapp minden kill után
+			spawner.enemykill();
             Destroy(target);
         }
 

@@ -10,8 +10,10 @@ public class WaveSpawner : MonoBehaviour {
 	public Image start_bp;
 	public int start_min_enemy = 2, start_max_enemy = 5, enemyk_körönkénti_növelése = 2;
 	public bool wavestart = false;
-	public int waveszámláló_NE_ÍRD_ÁT = 0; //azért public hogy más scriptben lehessen látni
+	int waveszámláló_v = 0;
     public float TimeBetweenWaves = 40f;
+	float enemys_alive;
+	bool gomb_megjelenít = false;
     private int EnemyCount;
 
     private float countdown;
@@ -35,14 +37,25 @@ public class WaveSpawner : MonoBehaviour {
 		if (countdown != 200) {
 			countdown -= Time.deltaTime;
 		}
+		if (gomb_megjelenít == true) {
+			start_txt.enabled = true;
+			start_bp.enabled = true;
+			TimeBetweenWavesText.enabled = true;
+			countdown = TimeBetweenWaves;
+			gomb_megjelenít = false;
+		}
         TimeBetweenWavesText.text = Mathf.Round(countdown).ToString();
     }
+	public int waveszámláló()
+	{
+		return waveszámláló_v;
+	}
 
 	IEnumerator SpawnWave()
     {
         //Ellenségek spawnoltatása
         EnemyCount = Random.Range(start_min_enemy, start_max_enemy);
-		print (waveszámláló_NE_ÍRD_ÁT);
+		enemys_alive = EnemyCount;
 		countdown = 200;
 		wavestart = false;
 		start_txt.enabled = false;
@@ -56,11 +69,8 @@ public class WaveSpawner : MonoBehaviour {
 			if (i == EnemyCount - 1) {
 				start_min_enemy += enemyk_körönkénti_növelése;
 				start_max_enemy += enemyk_körönkénti_növelése;
-				start_txt.enabled = true;
-				start_bp.enabled = true;
-				TimeBetweenWavesText.enabled = true;
-				waveszámláló_NE_ÍRD_ÁT += 1;
-				countdown = TimeBetweenWaves;
+				waveszámláló_v += 1;
+
 			}
 			
         }
@@ -70,7 +80,14 @@ public class WaveSpawner : MonoBehaviour {
 	{
 		wavestart = true;
 	}
-
+	public void enemykill()
+	{
+		enemys_alive -= 1;
+		if (enemys_alive == 0) {
+			gomb_megjelenít = true;
+			
+		}
+	}
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);

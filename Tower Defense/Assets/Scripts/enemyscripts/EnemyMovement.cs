@@ -4,6 +4,8 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour {
 
     public float speed = 20f;
+	GameObject gamemanager;
+	WaveSpawner spawner;
     public float health = 1f;
     private Transform target;
     private int waitpointIndex = 0;
@@ -13,6 +15,8 @@ public class EnemyMovement : MonoBehaviour {
         //A Ellenség életének és index számának beállítása
         target = Waitpoints.points[0];    
         health = Random.Range(health, health + 2);
+		gamemanager = GameObject.FindGameObjectWithTag ("manager");
+		spawner = gamemanager.GetComponent<WaveSpawner> ();
     }
 
     void Update()
@@ -33,6 +37,7 @@ public class EnemyMovement : MonoBehaviour {
         if (waitpointIndex >= Waitpoints.points.Length - 1)
         {
             Destroy(gameObject);
+			spawner.enemykill ();
             return;
         }
         waitpointIndex++;
