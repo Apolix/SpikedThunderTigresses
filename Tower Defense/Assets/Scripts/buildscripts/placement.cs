@@ -15,7 +15,7 @@ public class placement : MonoBehaviour {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);//megnézi hol van az egér
 		Physics.Raycast(ray, out hit); 
 
-		rounded_position = new Vector3 (Mathf.Round (hit.transform.position.x), 2f, Mathf.Round (hit.transform.position.z));
+		rounded_position = new Vector3 (hit.transform.position.x, 2f, hit.transform.position.z);
 		transform.position = rounded_position; //kerekíti a pozícióját a turretnek hogy a kockákra rakja le
 
 		if (Input.GetKeyDown(KeyCode.Escape)) {
