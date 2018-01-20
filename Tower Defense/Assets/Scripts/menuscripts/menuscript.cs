@@ -41,7 +41,7 @@ public class menuscript : MonoBehaviour {
 	}
 	public void startpress()
 	{
-		SceneManager.LoadScene ("Level01"); //betölti a pályát
+		SceneManager.LoadScene ("Level"); //betölti a pályát
 	}
 	public void ExitGame()
 	{
