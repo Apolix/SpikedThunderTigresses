@@ -42,7 +42,7 @@ public class WaveSpawner : MonoBehaviour {
     {
         //Ellenségek spawnoltatása
         EnemyCount = Random.Range(start_min_enemy, start_max_enemy);
-
+		print (waveszámláló_NE_ÍRD_ÁT);
 		countdown = 200;
 		wavestart = false;
 		start_txt.enabled = false;
