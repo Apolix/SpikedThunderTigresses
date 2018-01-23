@@ -3,7 +3,11 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 14
+=======
+  serializedVersion: 11
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   productGUID: 1378f3d5ff9d4864aab5ce06bd17aaac
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -101,6 +105,10 @@ PlayerSettings:
   n3dsDisableStereoscopicView: 0
   n3dsEnableSharedListOpt: 1
   n3dsEnableVSync: 0
+<<<<<<< HEAD
+=======
+  ignoreAlphaClear: 0
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   xboxOneResolution: 0
   xboxOneSResolution: 0
   xboxOneXResolution: 3
@@ -140,6 +148,7 @@ PlayerSettings:
     daydream:
       depthFormat: 0
       useSustainedPerformanceMode: 0
+<<<<<<< HEAD
       enableVideoLayer: 0
       useProtectedVideoMemory: 0
       minimumSupportedHeadTracking: 0
@@ -157,6 +166,12 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
+=======
+    hololens:
+      depthFormat: 1
+  protectGraphicsMemory: 0
+  useHDRDisplay: 0
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   applicationIdentifier:
     Android: com.Company.ProductName
     Standalone: unity.DefaultCompany.Tower Defense
@@ -380,9 +395,12 @@ PlayerSettings:
   switchTitleNames_9: 
   switchTitleNames_10: 
   switchTitleNames_11: 
+<<<<<<< HEAD
   switchTitleNames_12: 
   switchTitleNames_13: 
   switchTitleNames_14: 
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   switchPublisherNames_0: 
   switchPublisherNames_1: 
   switchPublisherNames_2: 
@@ -395,9 +413,12 @@ PlayerSettings:
   switchPublisherNames_9: 
   switchPublisherNames_10: 
   switchPublisherNames_11: 
+<<<<<<< HEAD
   switchPublisherNames_12: 
   switchPublisherNames_13: 
   switchPublisherNames_14: 
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   switchIcons_0: {fileID: 0}
   switchIcons_1: {fileID: 0}
   switchIcons_2: {fileID: 0}
@@ -410,9 +431,12 @@ PlayerSettings:
   switchIcons_9: {fileID: 0}
   switchIcons_10: {fileID: 0}
   switchIcons_11: {fileID: 0}
+<<<<<<< HEAD
   switchIcons_12: {fileID: 0}
   switchIcons_13: {fileID: 0}
   switchIcons_14: {fileID: 0}
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   switchSmallIcons_0: {fileID: 0}
   switchSmallIcons_1: {fileID: 0}
   switchSmallIcons_2: {fileID: 0}
@@ -425,9 +449,12 @@ PlayerSettings:
   switchSmallIcons_9: {fileID: 0}
   switchSmallIcons_10: {fileID: 0}
   switchSmallIcons_11: {fileID: 0}
+<<<<<<< HEAD
   switchSmallIcons_12: {fileID: 0}
   switchSmallIcons_13: {fileID: 0}
   switchSmallIcons_14: {fileID: 0}
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   switchManualHTML: 
   switchAccessibleURLs: 
   switchLegalInformation: 
@@ -469,8 +496,11 @@ PlayerSettings:
   switchLocalCommunicationIds_7: 
   switchParentalControl: 0
   switchAllowsScreenshot: 1
+<<<<<<< HEAD
   switchAllowsVideoCapturing: 1
   switchAllowsRuntimeAddOnContentInstall: 0
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
   switchSocketConfigEnabled: 0
@@ -621,7 +651,10 @@ PlayerSettings:
     WebPlayer: 0
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
+<<<<<<< HEAD
   scriptingRuntimeVersion: 0
+=======
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -707,11 +740,19 @@ PlayerSettings:
     Purchasing: 0
     UNet: 0
     Unity_Ads: 0
+<<<<<<< HEAD
   facebookSdkVersion: 7.9.4
+=======
+  facebookSdkVersion: 7.9.1
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
   apiCompatibilityLevel: 2
   cloudProjectId: 
   projectName: 
   organizationId: 
   cloudEnabled: 0
+<<<<<<< HEAD
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
+=======
+  enableNewInputSystem: 0
+>>>>>>> b7ffec2349855f3aa5a3709a14df46a42ca854d0
