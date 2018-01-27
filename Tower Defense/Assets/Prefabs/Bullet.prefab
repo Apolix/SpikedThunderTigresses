@@ -94,7 +94,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "gold_killenk\xE9nt": 10
+<<<<<<< HEAD
   bulletSpeed: 100
+=======
+  bulletSpeed: 75
+>>>>>>> f218ebb973156e2fce6ae60d735a592c75b1b224
   damage: 0
 --- !u!135 &135604329118613152
 SphereCollider:
