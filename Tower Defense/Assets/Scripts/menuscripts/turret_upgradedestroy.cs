@@ -4,16 +4,16 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class turret_upgradedestroy : MonoBehaviour {
-	public Canvas upgradedestroy; //canvas
-	public Image amit_mozgatsz; //felugró ablak
+	public Canvas upgradeDestroy; //canvas
+	public Image StatImage; //felugró ablak
 	GameObject turret_v; //a turret amire kattintasz
 	Ray ray;
 	RaycastHit hit;
 	// Use this for initialization
 	void Start () {
-		upgradedestroy.GetComponent<Canvas> ();
-		amit_mozgatsz.GetComponent<Image> ();
-		upgradedestroy.enabled = false;
+		upgradeDestroy.GetComponent<Canvas> ();
+		StatImage.GetComponent<Image> ();
+		upgradeDestroy.enabled = false;
 
 		turret_v.GetComponent<shooting> ();
 	}
@@ -29,8 +29,9 @@ public class turret_upgradedestroy : MonoBehaviour {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);//megnézi hol van az egér
 		Physics.Raycast(ray, out hit); 
 		if (hit.transform.tag=="turret") {
-			upgradedestroy.enabled = true;
-			amit_mozgatsz.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
+            Transform turret = hit.transform;
+			upgradeDestroy.enabled = true;          
+            StatImage.transform.position = new Vector3(Mathf.Round(Input.mousePosition.x), Input.mousePosition.y + 2f, Mathf.Round(Input.mousePosition.z));
 
 			turret_v = hit.transform.gameObject;
 			turret_v.GetComponent<shooting> ();
@@ -40,11 +41,11 @@ public class turret_upgradedestroy : MonoBehaviour {
 	}
 	public void close_window()
 	{
-		upgradedestroy.enabled = false; //bezárja az ablakot
+		upgradeDestroy.enabled = false; //bezárja az ablakot
 	}
 	public void upgrade_click() //mi történjen upgradénél
 	{
-		
+        print("update");
 	}
 	public void destroy_click() //destroy
 	{
