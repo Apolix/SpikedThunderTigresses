@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "gold_killenk\xE9nt": 10
-  bulletSpeed: 30
+  bulletSpeed: 75
   damage: 0
 --- !u!135 &135604329118613152
 SphereCollider:
