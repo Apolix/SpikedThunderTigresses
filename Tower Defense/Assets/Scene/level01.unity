@@ -18285,6 +18285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradedestroy: {fileID: 1037844264}
   amit_mozgatsz: {fileID: 1703486669}
+  destroy_text: {fileID: 1065514851}
+  upgrade_text: {fileID: 1337058635}
+  gamemanager: {fileID: 1978143902}
 --- !u!1001 &1986681015
 Prefab:
   m_ObjectHideFlags: 0
