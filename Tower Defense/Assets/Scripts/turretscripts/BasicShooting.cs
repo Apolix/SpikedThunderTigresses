@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour {
+public class BasicShooting : MonoBehaviour {
 
 	private GameObject target;
 	private GameObject[] enemies;
@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour {
 		foreach (GameObject enemy in enemies)
 		{
 			float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
 
 			if (distance < minDistance)
 			{

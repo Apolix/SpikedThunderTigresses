@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d65d5f0c3ec4fc4eb8ad9cd65c309d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red_turret_of_death: {fileID: 1631616176334650, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
+  red_turret_of_death: {fileID: 1055164085789428, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
     type: 2}
   sniper_tower: {fileID: 1414641484675086, guid: 90a0fe505c09a9d4c858259c29693455,
     type: 2}
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   destroy_text: {fileID: 2077535350}
   upgrade_text: {fileID: 693451189}
   gamemanager: {fileID: 160200667}
-  turretUpgrade: {fileID: 1553556297994908, guid: 33bad18c3b4b7ee408bf9d82e9d33d29,
+  turretUpgrade: {fileID: 1050045703733020, guid: 33bad18c3b4b7ee408bf9d82e9d33d29,
     type: 2}
 --- !u!1001 &170659188
 Prefab:
@@ -16921,7 +16921,7 @@ GameObject:
   - component: {fileID: 2077535350}
   - component: {fileID: 2077535348}
   m_Layer: 5
-  m_Name: upgrade text
+  m_Name: destroy text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

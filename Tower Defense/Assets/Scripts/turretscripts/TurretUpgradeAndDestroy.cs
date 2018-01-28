@@ -48,7 +48,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
         movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
 
 		turret_v = hit.transform.gameObject;
-		turret_v.GetComponent<Shooting> ();
+		turret_v.GetComponent<BasicShooting> ();
 		turret_cost = build_script.turret_1_cost;
 		destroy_text.text = "Destroy(" + Mathf.RoundToInt (turret_cost * 0.3f) + " gold)";
 	}
@@ -76,7 +76,9 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
         turretvTransform = turret_v.transform;
         Destroy(turret_v);
         Instantiate(turretUpgrade, turretvTransform.position, Quaternion.identity);
-	}
+        destroy_text.enabled = false;
+        close_window();
+    }
 
 	public void destroy_click() //destroy
 	{
