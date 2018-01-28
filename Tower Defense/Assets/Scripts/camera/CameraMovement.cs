@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camera_movement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour {
 	public CharacterController player;
 	float moveEH, moveJB, zoom;
 	public float speed, scrollspeed;

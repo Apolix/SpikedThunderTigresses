@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class build_leírás : MonoBehaviour {
+public class BuildDescription : MonoBehaviour {
+
 	public Image turret1_bp,sniper_tower_bp;
 	public Text turret1_txt, sniper_tower_txt;
+
 	void Start()
 	{
 		components (turret1_bp, turret1_txt);

@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradedestroy: {fileID: 1057318235}
-  movingImage: {fileID: 0}
+  movingImage: {fileID: 644952588}
   destroy_text: {fileID: 2077535350}
   upgrade_text: {fileID: 693451189}
   gamemanager: {fileID: 160200667}
