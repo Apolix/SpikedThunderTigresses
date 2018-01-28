@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - turret
   - manager
+  - basic_turret
+  - sniper_turret
   layers:
   - Default
   - TransparentFX

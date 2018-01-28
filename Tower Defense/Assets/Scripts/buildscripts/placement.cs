@@ -32,18 +32,18 @@ public class placement : MonoBehaviour {
 		print(hit.transform.name);
 		if (hit_tagging.transform.gameObject.tag == "ground") //groundnak neveztem el a füvet
         {
-			GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
+			//GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
 			if (Input.GetKeyDown(KeyCode.Mouse1)) 
             {
-				transform.position = new Vector3 (transform.position.x, 2, transform.position.z);
+				transform.position = new Vector3 (transform.position.x, 1, transform.position.z);
 				builder_script.building_turret();
-				GetComponent<Renderer> ().material = texture; //simma texture lesz
+				//GetComponent<Renderer> ().material = texture; //simma texture lesz
 				Destroy (this); //elpusztítja ezt a scriptet
             }
 		}
         else
         {
-			GetComponent<Renderer> ().material.color = Color.red;//itt kéne pirosnak lennie a turretnek (kísértetiesen nem működik de nincs error)
+			//GetComponent<Renderer> ().material.color = Color.red;//itt kéne pirosnak lennie a turretnek (kísértetiesen nem működik de nincs error)
 		}
 	}
 }
