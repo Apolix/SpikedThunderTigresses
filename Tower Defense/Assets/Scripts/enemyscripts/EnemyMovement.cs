@@ -14,7 +14,6 @@ public class EnemyMovement : MonoBehaviour {
     {
         //A Ellenség életének és index számának beállítása
         target = Waitpoints.points[0];    
-        health = Random.Range(health, health + 2);
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
 		spawner = gamemanager.GetComponent<WaveSpawner> ();
     }
@@ -25,7 +24,7 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 dir = target.position - transform.position;
         transform.position += dir.normalized * speed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if (Vector3.Distance(transform.position, target.position) <= (speed / 100))
         {
             GetNextWaitPoint();
         }
