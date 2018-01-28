@@ -58,11 +58,15 @@ GameObject:
   m_Layer: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of a233088... Merge branch 'master' of https://github.com/Apolix/SpikedThunderTigresses
   m_Name: BasicTurret1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_TagString: basic_turret
+<<<<<<< HEAD
 =======
   m_Name: TurretPedestal
   m_TagString: Untagged
@@ -80,6 +84,8 @@ GameObject:
   m_Name: BasicTurret1
   m_TagString: turret
 >>>>>>> parent of 08890a1... nemtom
+=======
+>>>>>>> parent of a233088... Merge branch 'master' of https://github.com/Apolix/SpikedThunderTigresses
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

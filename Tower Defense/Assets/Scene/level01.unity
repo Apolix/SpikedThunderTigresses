@@ -18285,6 +18285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of a233088... Merge branch 'master' of https://github.com/Apolix/SpikedThunderTigresses
   upgradedestroy: {fileID: 1037844264}
   amit_mozgatsz: {fileID: 1703486669}
 <<<<<<< HEAD
@@ -18293,6 +18296,7 @@ MonoBehaviour:
   destroy_text: {fileID: 1065514851}
   upgrade_text: {fileID: 1337058635}
   gamemanager: {fileID: 1978143902}
+<<<<<<< HEAD
 =======
   upgradeDestroy: {fileID: 0}
   StatImage: {fileID: 0}
@@ -18307,6 +18311,8 @@ MonoBehaviour:
   upgradedestroy: {fileID: 1037844264}
   amit_mozgatsz: {fileID: 1703486669}
 >>>>>>> parent of 08890a1... nemtom
+=======
+>>>>>>> parent of a233088... Merge branch 'master' of https://github.com/Apolix/SpikedThunderTigresses
 --- !u!1001 &1986681015
 Prefab:
   m_ObjectHideFlags: 0
