@@ -7,11 +7,12 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	public Canvas upgradedestroy; //canvas
 	public Image movingImage; //felugró ablak
 	public Text destroy_text, upgrade_text;
-	public GameObject gamemanager;
+    public GameObject gamemanager, turretUpgrade;
     int turret_cost;
 
     building build_script;
 	GameObject turret_v; //a turret amire kattintasz
+    Transform turretvTransform;
 	Ray ray;
 	RaycastHit hit;
 
@@ -71,8 +72,10 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	}
 
 	public void upgrade_click() //mi történjen upgradénél 								
-	{							
-		
+	{
+        turretvTransform = turret_v.transform;
+        Destroy(turret_v);
+        Instantiate(turretUpgrade, turretvTransform.position, Quaternion.identity);
 	}
 
 	public void destroy_click() //destroy
