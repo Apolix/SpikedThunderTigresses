@@ -18285,6 +18285,7 @@ MonoBehaviour:
 <<<<<<< HEAD
   upgradedestroy: {fileID: 1037844264}
   amit_mozgatsz: {fileID: 1703486669}
+<<<<<<< HEAD
   destroy_text: {fileID: 1065514851}
   upgrade_text: {fileID: 1337058635}
   gamemanager: {fileID: 1978143902}
@@ -18292,6 +18293,8 @@ MonoBehaviour:
   upgradeDestroy: {fileID: 0}
   StatImage: {fileID: 0}
 >>>>>>> 08890a17d7be9e6da5e9b85941cbdefbb5b85a39
+=======
+>>>>>>> parent of 6dc6a9e... destroy+ változók
 --- !u!1001 &1986681015
 Prefab:
   m_ObjectHideFlags: 0
