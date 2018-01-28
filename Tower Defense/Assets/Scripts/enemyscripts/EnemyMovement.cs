@@ -3,10 +3,11 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
+    public GameObject Coin;
     public float speed = 20f;
-	GameObject gamemanager;
-	WaveSpawner spawner;
     public float health = 1f;
+    GameObject gamemanager;
+	WaveSpawner spawner;
     private Transform target;
     private int waitpointIndex = 0;
 
@@ -34,7 +35,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         //Új waitpontot kap ami felé mozog ha eléri az utolsót megsemisül
         if (waitpointIndex >= Waitpoints.points.Length - 1)
-        {
+        {         
             Destroy(gameObject);
 			spawner.enemykill ();
             return;

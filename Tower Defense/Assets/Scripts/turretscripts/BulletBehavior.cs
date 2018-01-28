@@ -55,7 +55,8 @@ public class BulletBehavior : MonoBehaviour {
         if (enemy.health <= 0)
         {
 			gold.gold += gold_killenként; // 10 goldot kapp minden kill után
-			spawner.enemykill();
+            Instantiate(enemy.Coin, new Vector3(gameObject.transform.position.x, 3f, gameObject.transform.position.z), enemy.Coin.transform.rotation);
+            spawner.enemykill();
             Destroy(target);
         }
 
