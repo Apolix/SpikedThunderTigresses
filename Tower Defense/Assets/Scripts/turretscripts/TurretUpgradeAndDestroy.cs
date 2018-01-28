@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class turret_upgradedestroy : MonoBehaviour {
+public class TurretUpgradeAndDestroy : MonoBehaviour {
 	public Canvas upgradedestroy; //canvas
-	public Image amit_mozgatsz; //felugró ablak
+	public Image movingImage; //felugró ablak
 	public Text destroy_text, upgrade_text;
 	public GameObject gamemanager;
-	building build_script;
-	int turret_cost;
+    int turret_cost;
+
+    building build_script;
 	GameObject turret_v; //a turret amire kattintasz
 	Ray ray;
 	RaycastHit hit;
+
 	// Use this for initialization
 	void Start () {
 		upgradedestroy.GetComponent<Canvas> ();
-		amit_mozgatsz.GetComponent<Image> ();
+		movingImage.GetComponent<Image> ();
 		upgradedestroy.enabled = false;
 		build_script = gamemanager.GetComponent<building> ();
 	}
@@ -42,20 +44,20 @@ public class turret_upgradedestroy : MonoBehaviour {
 	void basic_turret_click()
 	{
 		upgradedestroy.enabled = true;
-		amit_mozgatsz.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
+        movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
 
 		turret_v = hit.transform.gameObject;
-		turret_v.GetComponent<shooting> ();
+		turret_v.GetComponent<Shooting> ();
 		turret_cost = build_script.turret_1_cost;
 		destroy_text.text = "Destroy(" + Mathf.RoundToInt (turret_cost * 0.3f) + " gold)";
 	}
 	void sniper_turret_click()
 	{
 		upgradedestroy.enabled = true;
-		amit_mozgatsz.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
+        movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
 
 		turret_v = hit.transform.gameObject;
-		turret_v.GetComponent<sniper_tower_shooting> ();
+		turret_v.GetComponent<SniperTowerShooting> ();
 		turret_cost = build_script.sniper_tower_cost;
 		destroy_text.text = "Destroy(" + Mathf.RoundToInt (turret_cost * 0.3f) + " gold)";
 	}
@@ -69,7 +71,7 @@ public class turret_upgradedestroy : MonoBehaviour {
 	}
 
 	public void upgrade_click() //mi történjen upgradénél 								
-	{							//turret_v amire kattintasz turret (látja hogy basic vagy sniper turret), turret_cost a turret épitési értéke
+	{							
 		
 	}
 

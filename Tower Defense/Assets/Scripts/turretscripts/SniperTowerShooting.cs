@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sniper_tower_shooting : MonoBehaviour {
+public class SniperTowerShooting : MonoBehaviour {
 
 	private GameObject target;
 	private GameObject[] enemies;
@@ -16,7 +16,7 @@ public class sniper_tower_shooting : MonoBehaviour {
 	public float attackSpeed = 5f;
 	public float turnspeed = 10f; 
 	public float damage = 0.3f;
-	public float osztó = 2;
+	public float divider = 2;
 	float countdownOfShooting = 0.5f;
 	bool placed = false;
 
@@ -79,7 +79,7 @@ public class sniper_tower_shooting : MonoBehaviour {
 		BulletBehavior bullet = whereToGo.GetComponent<BulletBehavior>();
 
 		float distance = Vector3.Distance(transform.position, enemy_v.transform.position);
-		damage = distance / osztó;
+		damage = distance / divider;
 
 		if (bullet != null)
 		{

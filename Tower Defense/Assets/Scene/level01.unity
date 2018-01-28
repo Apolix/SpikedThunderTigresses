@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d65d5f0c3ec4fc4eb8ad9cd65c309d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red_turret_of_death: {fileID: 1310633846539150, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
+  red_turret_of_death: {fileID: 1631616176334650, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
     type: 2}
   sniper_tower: {fileID: 1414641484675086, guid: 90a0fe505c09a9d4c858259c29693455,
     type: 2}
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradedestroy: {fileID: 1057318235}
-  amit_mozgatsz: {fileID: 644952588}
+  movingImage: {fileID: 0}
   destroy_text: {fileID: 2077535350}
   upgrade_text: {fileID: 693451189}
   gamemanager: {fileID: 160200667}

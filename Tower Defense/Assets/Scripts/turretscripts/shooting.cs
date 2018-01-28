@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shooting : MonoBehaviour {
+public class Shooting : MonoBehaviour {
 
 	private GameObject target;
 	private GameObject[] enemies;
