@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         //A Ellenség életének és index számának beállítása
         target = Waitpoints.points[0];    
+        health = Random.Range(health, health + 2);
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
 		spawner = gamemanager.GetComponent<WaveSpawner> ();
     }
