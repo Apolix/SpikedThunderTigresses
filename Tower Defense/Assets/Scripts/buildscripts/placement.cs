@@ -29,7 +29,6 @@ public class placement : MonoBehaviour {
 		}
 
 		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 30); //még egy raycast ami a tagét nézi meg az turret alatti objektumnak
-		print(hit.transform.name);
 		if (hit_tagging.transform.gameObject.tag == "ground") //groundnak neveztem el a füvet
         {
 			//GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)

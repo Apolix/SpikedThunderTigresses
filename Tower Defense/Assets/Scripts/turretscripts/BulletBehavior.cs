@@ -9,7 +9,6 @@ public class BulletBehavior : MonoBehaviour {
 	private WaveSpawner spawner;
     private Transform targetTransform;
     private building gold;
-    private float bugFix = 1f;
     public float bulletSpeed = 50f, damage;
 
     public void FindTarget(GameObject vTarget, float vDamage)
@@ -56,10 +55,10 @@ public class BulletBehavior : MonoBehaviour {
         enemy.health -= damage;
         if (enemy.health <= 0)
         {
+            Destroy(target);
             gold.gold += enemy.goldPerKill; // 10 goldot kapp minden kill után
             Instantiate(enemy.Coin, new Vector3(target.transform.position.x, 3f, target.transform.position.z), enemy.Coin.transform.rotation);
-            spawner.enemykill();
-            Destroy(target);
+            spawner.enemykill();         
         }
 
         Destroy(gameObject);
