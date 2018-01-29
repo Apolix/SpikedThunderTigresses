@@ -58,4 +58,5 @@ public class building : MonoBehaviour {
 			Instantiate (turret_v, rounded_position, Quaternion.identity); // lespawnol egy turrettet
 		}
 	}
+		
 }

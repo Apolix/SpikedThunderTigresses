@@ -6,12 +6,16 @@ public class CameraMovement : MonoBehaviour {
 	public CharacterController player;
 	float moveEH, moveJB, zoom;
 	public float speed, scrollspeed;
+	public GameObject gamemanager;
+	TurretUpgradeAndDestroy popup;
 	public float zoom_min = 20, zoom_max = 66, EH_lock_min,EH_lock_max, JB_lock_min, JB_lock_max;
 	Vector3 movement;
 	// Use this for initialization
 	void Start () {
 		player.GetComponent<CharacterController> ();
+		popup = gamemanager.GetComponent<TurretUpgradeAndDestroy> ();
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +32,11 @@ public class CameraMovement : MonoBehaviour {
 		if (transform.position.z > JB_lock_max && moveJB > 0 || transform.position.z < JB_lock_min && moveJB < 0) {
 			moveJB = 0;
 		}
+
+		if (moveEH != 0 || moveJB != 0) {
+			popup.close_window ();
+		}
+
 		Vector3 movement = new Vector3 (-moveEH, zoom, moveJB);
 		player.Move (movement * Time.deltaTime);
 	}
