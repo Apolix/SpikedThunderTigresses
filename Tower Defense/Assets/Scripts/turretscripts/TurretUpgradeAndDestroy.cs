@@ -35,19 +35,23 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);//megnézi hol van az egér
 			Physics.Raycast(ray, out hit);
-
-            if (hit.transform.tag == "upgraded")
+            if (hit.transform.position.y <= 2f)
             {
-				turretClick(50, true);
+                if (hit.transform.tag == "upgraded")
+                {
+                    turretClick(50, true);
+                }
+                if (hit.transform.tag == "basic_turret")
+                {
+                    turretClick(build_script.turret_1_cost, false);
+
+                }
+                if (hit.transform.tag == "sniper_turret")
+                {
+                    turretClick(build_script.sniper_tower_cost, false);
+
+                }
             }
-			if (hit.transform.tag=="basic_turret") {
-				turretClick(build_script.turret_1_cost, false);
-
-			}
-			if (hit.transform.tag=="sniper_turret") {
-				turretClick(build_script.sniper_tower_cost, false);
-
-			}
 		}
 	}
 
