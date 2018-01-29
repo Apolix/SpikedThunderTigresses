@@ -24,7 +24,7 @@ public class BulletBehavior : MonoBehaviour {
         gold = gamemanager.GetComponent<building>();
         targetTransform = target.transform;
     }
-	void Update ()
+	void FixedUpdate ()
     {
         //Óvatosság
         if (target == null)
