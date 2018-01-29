@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4927954774232542}
+  - component: {fileID: 65178473662602824}
   - component: {fileID: 114654083866702662}
   - component: {fileID: 114743203783707226}
-  - component: {fileID: 65178473662602824}
   m_Layer: 0
   m_Name: BasicTurret1
   m_TagString: basic_turret

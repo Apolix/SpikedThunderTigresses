@@ -7,7 +7,7 @@ public class BulletBehavior : MonoBehaviour {
     private GameObject target;
 	private GameObject gamemanager; 
 	private WaveSpawner spawner;
-    private Transform targetTransform;
+    private Vector3 targetTransform;
     private building gold;
     public float bulletSpeed = 50f, damage;
 
@@ -22,7 +22,7 @@ public class BulletBehavior : MonoBehaviour {
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
 		spawner = gamemanager.GetComponent<WaveSpawner> ();
         gold = gamemanager.GetComponent<building>();
-        targetTransform = target.transform;
+        targetTransform = target.transform.position;
     }
 	void FixedUpdate ()
     {
@@ -34,7 +34,7 @@ public class BulletBehavior : MonoBehaviour {
         }
 
         //Bullet mozgása
-        Vector3 direction = targetTransform.position - transform.position;
+        Vector3 direction = targetTransform - transform.position;
         float currentDistance = bulletSpeed * Time.deltaTime;
 
         if (direction.magnitude <= currentDistance)
