@@ -6,10 +6,10 @@ public class BulletBehavior : MonoBehaviour {
 
     private GameObject target;
 	private GameObject gamemanager; 
-	private building gold;
 	private WaveSpawner spawner;
     private Transform targetTransform;
-	public int gold_killenként = 10;
+    private building gold;
+    private float bugFix = 1f;
     public float bulletSpeed = 50f, damage;
 
     public void FindTarget(GameObject vTarget, float vDamage)
@@ -21,8 +21,8 @@ public class BulletBehavior : MonoBehaviour {
 	void Start()
 	{
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
-		gold = gamemanager.GetComponent<building> ();
 		spawner = gamemanager.GetComponent<WaveSpawner> ();
+        gold = gamemanager.GetComponent<building>();
         targetTransform = target.transform;
     }
 	void Update ()
@@ -56,7 +56,7 @@ public class BulletBehavior : MonoBehaviour {
         enemy.health -= damage;
         if (enemy.health <= 0)
         {
-			gold.gold += gold_killenként; // 10 goldot kapp minden kill után
+            gold.gold += enemy.goldPerKill; // 10 goldot kapp minden kill után
             Instantiate(enemy.Coin, new Vector3(target.transform.position.x, 3f, target.transform.position.z), enemy.Coin.transform.rotation);
             spawner.enemykill();
             Destroy(target);

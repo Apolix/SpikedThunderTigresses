@@ -10,7 +10,6 @@ public class BasicShooting : MonoBehaviour {
 
 	public Transform partToRotate;
 	public Transform firePosition;
-    public bool Upgrade = false;
 
 	[Header("Stats")]
 	public float range = 15f;
@@ -44,15 +43,12 @@ public class BasicShooting : MonoBehaviour {
 	}
     void Start()
     {
-        if (Upgrade == true)
-        {
-            InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        }
+
     }
 	void Update()
 	{
 
-        if (transform.position.y <= 2f && placed == false && Upgrade == false)
+        if (transform.position.y <= 2f && placed == false)
 		{
 			InvokeRepeating("UpdateTarget", 0f, 0.5f);
 			placed = true;

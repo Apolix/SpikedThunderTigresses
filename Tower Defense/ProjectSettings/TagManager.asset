@@ -10,6 +10,7 @@ TagManager:
   - manager
   - basic_turret
   - sniper_turret
+  - upgraded
   layers:
   - Default
   - TransparentFX

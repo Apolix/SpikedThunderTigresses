@@ -7,7 +7,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	public Canvas upgradedestroy; //canvas
 	public Image movingImage; //felugró ablak
 	public Text destroy_text, upgrade_text;
-    public GameObject gamemanager, turretUpgrade;
+    public GameObject gamemanager, basicTurretUpgrade; //Visszaraktam ide logikai okból
     public float multyplier = 0.5f;
     int turret_cost;
 
@@ -29,8 +29,12 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);//megnézi hol van az egér
-			Physics.Raycast(ray, out hit); 
+			Physics.Raycast(ray, out hit);
 
+            if (hit.transform.tag == "upgraded")
+            {
+                turretClick(50);
+            }
 			if (hit.transform.tag=="basic_turret") {
 				turretClick(build_script.turret_1_cost);
 
@@ -51,6 +55,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
         turret_v = hit.transform.gameObject;
         turret_cost = Cost;
         destroy_text.text = "Destroy(" + Mathf.RoundToInt(turret_cost * multyplier) + " gold)";
+        upgrade_text.text = "Upgrade(" + Mathf.RoundToInt(turret_cost) + " gold)";
     }
 
 	public void close_window()
@@ -62,14 +67,14 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	{
         turretvTransform = turret_v.transform;
         Destroy(turret_v);
-        Instantiate(turretUpgrade, turretvTransform.position, Quaternion.identity);
+        Instantiate(basicTurretUpgrade, turretvTransform.position, turretvTransform.rotation);
         close_window();
     }
 
 	public void destroy_click() //destroy
 	{
 		Destroy (turret_v);
-		build_script.gold += Mathf.RoundToInt( turret_cost * 0.3f);
+		build_script.gold += Mathf.RoundToInt(turret_cost * multyplier);
 		close_window ();
 	}
 }

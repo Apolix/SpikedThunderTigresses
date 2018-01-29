@@ -6,8 +6,10 @@ public class EnemyMovement : MonoBehaviour {
     public GameObject Coin;
     public float speed = 20f;
     public float health = 1f;
-    GameObject gamemanager;
-	WaveSpawner spawner;
+    public int goldPerKill = 10;
+
+    private GameObject gamemanager;
+    private WaveSpawner spawner;
     private Transform target;
     private int waitpointIndex = 0;
 
