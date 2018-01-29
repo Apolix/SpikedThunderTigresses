@@ -9,6 +9,7 @@ public class placement : MonoBehaviour {
 	Vector3 rounded_position;
 	public Material texture;
 	GameObject manager;
+	public GameObject[] turret_parts;
 	building builder_script;
 	void Start()
 	{
@@ -31,18 +32,25 @@ public class placement : MonoBehaviour {
 		Physics.Raycast (transform.position, Vector3.down, out hit_tagging, 30); //még egy raycast ami a tagét nézi meg az turret alatti objektumnak
 		if (hit_tagging.transform.gameObject.tag == "ground") //groundnak neveztem el a füvet
         {
-			//GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
+			for (int i = 0; i < turret_parts.Length; i++) {
+				turret_parts[i].GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
+			}
+
 			if (Input.GetKeyDown(KeyCode.Mouse1)) 
             {
 				transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
 				builder_script.building_turret();
-				//GetComponent<Renderer> ().material = texture; //simma texture lesz
+				for (int i = 0; i < turret_parts.Length; i++) {
+					turret_parts[i].GetComponent<Renderer> ().material = texture; //simma texture lesz
+				}
 				Destroy (this); //elpusztítja ezt a scriptet
             }
 		}
         else
         {
-			//GetComponent<Renderer> ().material.color = Color.red;//itt kéne pirosnak lennie a turretnek (kísértetiesen nem működik de nincs error)
+			for (int i = 0; i < turret_parts.Length; i++) {
+				turret_parts[i].GetComponent<Renderer> ().material.color = Color.red; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
+			}
 		}
 	}
 }

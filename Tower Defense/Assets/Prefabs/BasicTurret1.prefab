@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4927954774232542}
-  - component: {fileID: 65824150137436478}
   - component: {fileID: 114654083866702662}
   - component: {fileID: 114743203783707226}
+  - component: {fileID: 65178473662602824}
   m_Layer: 0
   m_Name: BasicTurret1
   m_TagString: basic_turret
@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055164085789428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.561011, y: 0.5, z: -22.719204}
+  m_LocalPosition: {x: -271.0103, y: 11.946761, z: -28.640684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4799161285118770}
@@ -244,7 +244,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195761668151206}
   m_Mesh: {fileID: 4300000, guid: 2a2606fc870ad144db5abb5578e3cbe1, type: 3}
---- !u!65 &65824150137436478
+--- !u!65 &65178473662602824
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -254,7 +254,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 1, z: 8}
+  m_Size: {x: 5, y: 0, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114654083866702662
 MonoBehaviour:
@@ -267,7 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57739dc4e9c570542b10ace30edab250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 0}
+  texture: {fileID: 2100000, guid: 5ea1f80ec3e9aa8499c730e156142b60, type: 2}
+  turret_parts:
+  - {fileID: 1195761668151206}
+  - {fileID: 1233366076485612}
 --- !u!114 &114743203783707226
 MonoBehaviour:
   m_ObjectHideFlags: 1
