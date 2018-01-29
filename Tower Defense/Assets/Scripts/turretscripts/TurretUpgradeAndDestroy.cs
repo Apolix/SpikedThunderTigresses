@@ -8,6 +8,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	public Image movingImage; //felugró ablak
 	public Text destroy_text, upgrade_text;
     public GameObject gamemanager, turretUpgrade;
+    public float multyplier = 0.5f;
     int turret_cost;
 
     building build_script;
@@ -31,40 +32,26 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 			Physics.Raycast(ray, out hit); 
 
 			if (hit.transform.tag=="basic_turret") {
-				basic_turret_click ();
+				turretClick(build_script.turret_1_cost);
 
 			}
 			if (hit.transform.tag=="sniper_turret") {
-				sniper_turret_click ();
+                turretClick(build_script.sniper_tower_cost);
 
 			}
 		}
 	}
 
-	#region turret_click
-	void basic_turret_click()
-	{
-		upgradedestroy.enabled = true;
+
+    void turretClick(int Cost)
+    {
+        upgradedestroy.enabled = true;
         movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
 
-		turret_v = hit.transform.gameObject;
-		turret_v.GetComponent<BasicShooting> ();
-		turret_cost = build_script.turret_1_cost;
-		destroy_text.text = "Destroy(" + Mathf.RoundToInt (turret_cost * 0.3f) + " gold)";
-	}
-	void sniper_turret_click()
-	{
-		upgradedestroy.enabled = true;
-        movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
-
-		turret_v = hit.transform.gameObject;
-		turret_v.GetComponent<SniperTowerShooting> ();
-		turret_cost = build_script.sniper_tower_cost;
-		destroy_text.text = "Destroy(" + Mathf.RoundToInt (turret_cost * 0.3f) + " gold)";
-	}
-	#endregion
-
-
+        turret_v = hit.transform.gameObject;
+        turret_cost = Cost;
+        destroy_text.text = "Destroy(" + Mathf.RoundToInt(turret_cost * multyplier) + " gold)";
+    }
 
 	public void close_window()
 	{
@@ -76,7 +63,6 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
         turretvTransform = turret_v.transform;
         Destroy(turret_v);
         Instantiate(turretUpgrade, turretvTransform.position, Quaternion.identity);
-        destroy_text.enabled = false;
         close_window();
     }
 

@@ -5,9 +5,10 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour {
 
     private GameObject target;
-	GameObject gamemanager; 
+	private GameObject gamemanager; 
 	private building gold;
 	private WaveSpawner spawner;
+    private Transform targetTransform;
 	public int gold_killenként = 10;
     public float bulletSpeed = 50f, damage;
 
@@ -22,7 +23,8 @@ public class BulletBehavior : MonoBehaviour {
 		gamemanager = GameObject.FindGameObjectWithTag ("manager");
 		gold = gamemanager.GetComponent<building> ();
 		spawner = gamemanager.GetComponent<WaveSpawner> ();
-	}
+        targetTransform = target.transform;
+    }
 	void Update ()
     {
         //Óvatosság
@@ -33,7 +35,7 @@ public class BulletBehavior : MonoBehaviour {
         }
 
         //Bullet mozgása
-        Vector3 direction = target.transform.position - transform.position;
+        Vector3 direction = targetTransform.position - transform.position;
         float currentDistance = bulletSpeed * Time.deltaTime;
 
         if (direction.magnitude <= currentDistance)
@@ -55,7 +57,7 @@ public class BulletBehavior : MonoBehaviour {
         if (enemy.health <= 0)
         {
 			gold.gold += gold_killenként; // 10 goldot kapp minden kill után
-            Instantiate(enemy.Coin, new Vector3(gameObject.transform.position.x, 3f, gameObject.transform.position.z), enemy.Coin.transform.rotation);
+            Instantiate(enemy.Coin, new Vector3(target.transform.position.x, 3f, target.transform.position.z), enemy.Coin.transform.rotation);
             spawner.enemykill();
             Destroy(target);
         }

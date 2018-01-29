@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
 		moveJB = Input.GetAxis ("Horizontal") * speed;
 		moveEH = Input.GetAxis ("Vertical") * speed;
-		zoom = Input.GetAxis ("Mouse ScrollWheel") * scrollspeed;
+		zoom = Input.GetAxis ("Mouse ScrollWheel") * -scrollspeed;
 
 		if (transform.position.y > zoom_max && zoom > 0 || transform.position.y < zoom_min && zoom < 0) {
 			zoom = 0;

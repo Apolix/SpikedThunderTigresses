@@ -35,7 +35,7 @@ public class placement : MonoBehaviour {
 			//GetComponent<Renderer> ().material.color = Color.green; //itt kéne zöldnek lennie a turretnek (kísértetiesen nem működik de nincs error)
 			if (Input.GetKeyDown(KeyCode.Mouse1)) 
             {
-				transform.position = new Vector3 (transform.position.x, 1, transform.position.z);
+				transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
 				builder_script.building_turret();
 				//GetComponent<Renderer> ().material = texture; //simma texture lesz
 				Destroy (this); //elpusztítja ezt a scriptet
