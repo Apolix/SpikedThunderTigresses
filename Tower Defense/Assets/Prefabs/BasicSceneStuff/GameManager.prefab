@@ -9,19 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1695676518773660}
+  m_RootGameObject: {fileID: 1279960172266822}
   m_IsPrefabParent: 1
---- !u!1 &1695676518773660
+--- !u!1 &1279960172266822
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4018518196174150}
-  - component: {fileID: 114097160370340160}
-  - component: {fileID: 114849976685648952}
-  - component: {fileID: 114430665920057474}
+  - component: {fileID: 4976491435813910}
+  - component: {fileID: 114528181454737170}
+  - component: {fileID: 114632557420575872}
+  - component: {fileID: 114560567657154098}
+  - component: {fileID: 114759354877425852}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: manager
@@ -29,25 +30,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4018518196174150
+--- !u!4 &4976491435813910
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695676518773660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1279960172266822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114097160370340160
+--- !u!114 &114528181454737170
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695676518773660}
+  m_GameObject: {fileID: 1279960172266822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9032caa5675ee240bb6815d8f4063ff, type: 3}
@@ -63,12 +64,12 @@ MonoBehaviour:
   "enemyk_k\xF6r\xF6nk\xE9nti_n\xF6vel\xE9se": 2
   wavestart: 0
   TimeBetweenWaves: 40
---- !u!114 &114430665920057474
+--- !u!114 &114560567657154098
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695676518773660}
+  m_GameObject: {fileID: 1279960172266822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f9ab81670f422e438d8ac0706b73d4b, type: 3}
@@ -78,18 +79,18 @@ MonoBehaviour:
   sniper_tower_bp: {fileID: 0}
   turret1_txt: {fileID: 0}
   sniper_tower_txt: {fileID: 0}
---- !u!114 &114849976685648952
+--- !u!114 &114632557420575872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695676518773660}
+  m_GameObject: {fileID: 1279960172266822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d65d5f0c3ec4fc4eb8ad9cd65c309d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red_turret_of_death: {fileID: 1494170637206764, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
+  red_turret_of_death: {fileID: 1055164085789428, guid: 4f0f5b6fe5488ef4a991de0ee081d209,
     type: 2}
   sniper_tower: {fileID: 1414641484675086, guid: 90a0fe505c09a9d4c858259c29693455,
     type: 2}
@@ -97,3 +98,24 @@ MonoBehaviour:
   gold: 40
   turret_1_cost: 20
   sniper_tower_cost: 40
+--- !u!114 &114759354877425852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279960172266822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d5289f156d96a449a72966f7b9b096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradedestroy: {fileID: 0}
+  movingImage: {fileID: 0}
+  upgrade_background: {fileID: 0}
+  destroy_text: {fileID: 0}
+  upgrade_text: {fileID: 0}
+  gamemanager: {fileID: 1279960172266822}
+  basicTurretUpgrade: {fileID: 1050045703733020, guid: 33bad18c3b4b7ee408bf9d82e9d33d29,
+    type: 2}
+  multyplier: 0.5
+  upgrade_multyplier: 4

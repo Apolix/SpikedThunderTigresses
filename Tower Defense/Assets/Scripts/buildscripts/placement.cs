@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class placement : MonoBehaviour {
 
-	Ray ray, ray_tagging;
+    public Material texture;
+    public GameObject[] turret_parts;
+
+    Ray ray, ray_tagging;
 	RaycastHit hit, hit_tagging;
 	Vector3 rounded_position;
-	public Material texture;
 	GameObject manager;
-	public GameObject[] turret_parts;
 	building builder_script;
 	void Start()
 	{
