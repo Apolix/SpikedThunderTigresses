@@ -11,6 +11,7 @@ TagManager:
   - basic_turret
   - sniper_turret
   - upgraded
+  - basic_turret_u
   layers:
   - Default
   - TransparentFX

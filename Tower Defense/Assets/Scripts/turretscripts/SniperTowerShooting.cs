@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SniperTowerShooting : MonoBehaviour {
@@ -18,28 +19,57 @@ public class SniperTowerShooting : MonoBehaviour {
 	public float damage = 0.3f;
 	public float divider = 2;
 	float countdownOfShooting = 0.5f;
-	bool placed = false;
+	bool placed = false, highest_health_target = false;
+	EnemyMovement enemyscript;
+
+	public void targeting_set(Text targetingtext_v)
+	{
+		highest_health_target = !highest_health_target;
+		if (highest_health_target == false) {
+			targetingtext_v.text = "lowest health";
+
+		} else {
+			targetingtext_v.text = "highest health";
+		}
+		print (highest_health_target);
+	}
 
 	void UpdateTarget()
 	{
 		enemies = GameObject.FindGameObjectsWithTag("enemy");
-		float minDistance = Mathf.Infinity;
-		GameObject nearestEnemy = null;
+		float health_index_valami_nem_tom;
+
+		if (highest_health_target == true) {
+			health_index_valami_nem_tom = 0;
+		} else {
+			health_index_valami_nem_tom = Mathf.Infinity;
+		}
+		float distance = 0;
+		GameObject potentialEnemy = null;
 
 		foreach (GameObject enemy in enemies)
 		{
-			float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
-
-			if (distance < minDistance)
-			{
-				minDistance = distance;
-				nearestEnemy = enemy;
+			enemyscript = enemy.GetComponent<EnemyMovement> ();
+			distance = Vector3.Distance(transform.position, enemy.transform.position);
+			if (highest_health_target == true) {
+				if (enemyscript.health > health_index_valami_nem_tom) {
+					health_index_valami_nem_tom = enemyscript.health;
+					potentialEnemy = enemy;
+				}
 			}
+
+			if (highest_health_target == false) {
+				if (enemyscript.health < health_index_valami_nem_tom) {
+					health_index_valami_nem_tom = enemyscript.health;
+					potentialEnemy = enemy;
+				}
+			}
+
+
 		}
-		if (nearestEnemy != null && minDistance <= range)
+		if (potentialEnemy != null && distance <= range)
 		{
-			target = nearestEnemy;
+			target = potentialEnemy;
 		}
 		else { target = null; }
 	}

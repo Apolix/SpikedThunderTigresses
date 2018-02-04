@@ -6,7 +6,7 @@ using UnityEngine;
 public class TurretUpgradeAndDestroy : MonoBehaviour {
 	public Canvas upgradedestroy; //canvas
 	public Image movingImage, upgrade_background; //felugró ablak
-	public Text destroy_text, upgrade_text;
+	public Text destroy_text, upgrade_text, targeting_text;
     public GameObject gamemanager, basicTurretUpgrade; //Visszaraktam ide logikai okból
 	public float multyplier = 0.5f;
     int turret_cost;
@@ -18,6 +18,8 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	ColorBlock upgrade_color;
 	Ray ray;
 	RaycastHit hit;
+	BasicShooting basicshooting_v;
+	SniperTowerShooting snipertowershooting_v;
 
 	// Use this for initialization
 	void Start () {
@@ -37,18 +39,20 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 			Physics.Raycast(ray, out hit);
             if (hit.transform.position.y <= 2f)
             {
-                if (hit.transform.tag == "upgraded")
+                if (hit.transform.tag == "basic_turret_u")
                 {
-                    turretClick(50, true);
+					turretClick(turret_cost * upgrade_multyplier, true);
                 }
                 if (hit.transform.tag == "basic_turret")
                 {
                     turretClick(build_script.turret_1_cost, false);
+					basicshooting_v = turret_v.GetComponent<BasicShooting> ();
 
                 }
                 if (hit.transform.tag == "sniper_turret")
                 {
                     turretClick(build_script.sniper_tower_cost, false);
+					snipertowershooting_v = turret_v.GetComponent<SniperTowerShooting> ();
 
                 }
             }
@@ -103,5 +107,16 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 		Destroy (turret_v);
 		build_script.gold += Mathf.RoundToInt(turret_cost * multyplier);
 		close_window ();
+	}
+
+	public void targeting_click()
+	{
+		print ("valami");
+		if (turret_v.transform.gameObject.tag == "basic_turret" || turret_v.transform.gameObject.tag == "basic_turret_u") {
+			basicshooting_v.targeting_set (targeting_text);
+		}
+		if (turret_v.transform.gameObject.tag == "sniper_turret") {
+			basicshooting_v.targeting_set (targeting_text);
+		}
 	}
 }

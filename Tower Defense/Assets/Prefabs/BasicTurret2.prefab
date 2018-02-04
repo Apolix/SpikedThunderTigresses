@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114925386420805774}
   m_Layer: 0
   m_Name: BasicTurret2
-  m_TagString: upgraded
+  m_TagString: basic_turret_u
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
