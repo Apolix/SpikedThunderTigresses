@@ -1277,7 +1277,7 @@ MonoBehaviour:
   sniper_tower: {fileID: 1414641484675086, guid: 90a0fe505c09a9d4c858259c29693455,
     type: 2}
   gold_txt: {fileID: 1287238530}
-  gold: 40
+  gold: 100000
   turret_1_cost: 20
   sniper_tower_cost: 40
 --- !u!114 &160200670

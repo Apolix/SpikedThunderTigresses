@@ -41,7 +41,8 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
             {
                 if (hit.transform.tag == "basic_turret_u")
                 {
-					turretClick(turret_cost * upgrade_multyplier, true);  //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
+					//turretClick(turret_cost * upgrade_multyplier, true); //ez egy kurva nagy bug xD csak kattingatni kell az upgradolt toronyra és végtelen gold
+					turretClick(build_script.turret_1_cost * upgrade_multyplier, true);//megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
 					targeting_text.text = basicshooting_v.targetingtextget (); //beállítja a targetintextet
                 }
                 if (hit.transform.tag == "basic_turret")
