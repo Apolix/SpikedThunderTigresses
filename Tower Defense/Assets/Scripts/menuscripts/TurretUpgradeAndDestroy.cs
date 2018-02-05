@@ -42,17 +42,20 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
                 if (hit.transform.tag == "basic_turret_u")
                 {
 					turretClick(turret_cost * upgrade_multyplier, true);  //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
+					targeting_text.text = basicshooting_v.targetingtextget (); //beállítja a targetintextet
                 }
                 if (hit.transform.tag == "basic_turret")
                 {
                     turretClick(build_script.turret_1_cost, false);
 					basicshooting_v = turret_v.GetComponent<BasicShooting> (); //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
+					targeting_text.text = basicshooting_v.targetingtextget (); //beállítja a targetintextet
 
                 }
                 if (hit.transform.tag == "sniper_turret")
                 {
                     turretClick(build_script.sniper_tower_cost, false);
 					snipertowershooting_v = turret_v.GetComponent<SniperTowerShooting> (); //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
+					targeting_text.text = snipertowershooting_v.targetingtextget (); //beállítja a targetintextet
 
                 }
             }
@@ -116,7 +119,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 			basicshooting_v.targeting_set (targeting_text);
 		}
 		if (turret_v.transform.gameObject.tag == "sniper_turret") {
-			basicshooting_v.targeting_set (targeting_text);
+			snipertowershooting_v.targeting_set (targeting_text);
 		}
 	}
 }

@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 2100000, guid: 6443568b11429234eb5aaf4114683179, type: 2}
+  turret_parts: []
 --- !u!114 &114958797753435026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,8 +154,9 @@ MonoBehaviour:
     type: 2}
   partToRotate: {fileID: 4001832685897488}
   firePosition: {fileID: 4979170704076820}
-  range: 35
+  range: 40
   attackSpeed: 5
   turnspeed: 10
   damage: 0.3
-  "oszt\xF3": 4.5
+  divider: 2
+  targeting_type: 0

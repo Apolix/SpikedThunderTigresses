@@ -18,6 +18,7 @@ public class BasicShooting : MonoBehaviour {
 	public float turnspeed = 10f; 
 	public float damage = 1f;
 	float countdownOfShooting = 0.5f;
+	string targetingtext = "lowest health";
 	bool highest_health_target = false;
 	bool placed = false;
 	EnemyMovement enemyscript;
@@ -62,16 +63,22 @@ public class BasicShooting : MonoBehaviour {
 		else { target = null; }
 	}
 
+	public string targetingtextget()
+	{
+		return targetingtext;
+	}
+
 	public void targeting_set(Text targetingtext_v)
 	{
 		highest_health_target = !highest_health_target;
 		if (highest_health_target == false) {
-			targetingtext_v.text = "lowest health";
+			targetingtext = "lowest health";
+			targetingtext_v.text = targetingtext;
 
 		} else {
-			targetingtext_v.text = "highest health";
+			targetingtext = "highest health";
+			targetingtext_v.text = targetingtext;
 		}
-		print (highest_health_target);
 	}
 
 	void Update()

@@ -19,48 +19,70 @@ public class SniperTowerShooting : MonoBehaviour {
 	public float damage = 0.3f;
 	public float divider = 2;
 	float countdownOfShooting = 0.5f;
-	bool placed = false, highest_health_target = false;
+	public int targeting_type = 0; //0 lowest health, 1 highest health, 2 farthest enemy 
+	bool placed = false;
+	string targetingtext = "lowest health";
 	EnemyMovement enemyscript;
 
+	public string targetingtextget()
+	{
+		return targetingtext;
+	}
 	public void targeting_set(Text targetingtext_v)
 	{
-		highest_health_target = !highest_health_target;
-		if (highest_health_target == false) {
-			targetingtext_v.text = "lowest health";
-
-		} else {
-			targetingtext_v.text = "highest health";
+		targeting_type += 1;
+		if (targeting_type > 2) {
+			targeting_type = 0;
 		}
-		print (highest_health_target); //targeting text szövege és targeting beállítása
+		if (targeting_type == 0) {
+			targetingtext = "lowest health";
+			targetingtext_v.text = targetingtext;
+
+		} if(targeting_type == 1) {
+			targetingtext = "highest health";
+			targetingtext_v.text = targetingtext;
+		}
+		if (targeting_type == 2) {
+			targetingtext = "farthest enemy";
+			targetingtext_v.text = targetingtext;
+		}
+		//targeting text szövege és targeting beállítása
 	}
 
 	void UpdateTarget() //megkeresi a potenciális enemyt a beéllitások alapján
 	{
 		enemies = GameObject.FindGameObjectsWithTag("enemy");
-		float health_index_valami_nem_tom;
+		float health_index_valami_nem_tom = 0;
 
-		if (highest_health_target == true) {
+		if (targeting_type == 1) {
 			health_index_valami_nem_tom = 0;
-		} else {
+		} if(targeting_type == 0) {
 			health_index_valami_nem_tom = Mathf.Infinity;
 		}
 		float distance = 0;
+		float potential_distance = 0;
 		GameObject potentialEnemy = null;
 
 		foreach (GameObject enemy in enemies)
 		{
 			enemyscript = enemy.GetComponent<EnemyMovement> ();
 			distance = Vector3.Distance(transform.position, enemy.transform.position);
-			if (highest_health_target == true) {
+			if (targeting_type == 1) {
 				if (enemyscript.health > health_index_valami_nem_tom) {
 					health_index_valami_nem_tom = enemyscript.health;
 					potentialEnemy = enemy;
 				}
 			}
 
-			if (highest_health_target == false) {
+			if (targeting_type == 0) {
 				if (enemyscript.health < health_index_valami_nem_tom) {
 					health_index_valami_nem_tom = enemyscript.health;
+					potentialEnemy = enemy;
+				}
+			}
+			if (targeting_type == 2) {
+				if (potential_distance < distance) {
+					potential_distance = distance;
 					potentialEnemy = enemy;
 				}
 			}
