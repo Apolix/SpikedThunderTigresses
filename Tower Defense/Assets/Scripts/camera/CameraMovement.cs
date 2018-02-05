@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
 		moveJB = Input.GetAxis ("Horizontal") * speed;
 		moveEH = Input.GetAxis ("Vertical") * speed;
-		zoom = Input.GetAxis ("Mouse ScrollWheel") * -scrollspeed;
+		zoom = Input.GetAxis ("Mouse ScrollWheel") * -scrollspeed; //inputok
 
 		if (transform.position.y > zoom_max && zoom > 0 || transform.position.y < zoom_min && zoom < 0) {
 			zoom = 0;
@@ -31,13 +31,13 @@ public class CameraMovement : MonoBehaviour {
 		}
 		if (transform.position.z > JB_lock_max && moveJB > 0 || transform.position.z < JB_lock_min && moveJB < 0) {
 			moveJB = 0;
-		}
+		} //lockolja a kamerát addot koordinátáknál
 
 		if (moveEH != 0 || moveJB != 0) {
-			popup.close_window ();
+			popup.close_window (); //bezárja az upgrade and destroy popupot
 		}
 
 		Vector3 movement = new Vector3 (-moveEH, zoom, moveJB);
-		player.Move (movement * Time.deltaTime);
+		player.Move (movement * Time.deltaTime); //mozgatja a playert
 	}
 }

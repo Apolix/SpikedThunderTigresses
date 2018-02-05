@@ -15,20 +15,20 @@ public class IngameMenuScript : MonoBehaviour {
 		standard_menu.GetComponent<Canvas> ();
 		build_menu.GetComponent<Canvas> ();
 		build_menu.enabled = false;
-		Build_background.GetComponent<Image> ();
+		Build_background.GetComponent<Image> (); //getcomponentek
 	}
 	public void Build_click()
 	{
 		build_menu.enabled = true;
 		build.enabled = false;
-		Build_background.enabled = false;
+		Build_background.enabled = false; //build click eseménye
 
 	}
 	public void exitclick()
 	{
 		build_menu.enabled = false;
 		build.enabled = true;
-		Build_background.enabled = true;
+		Build_background.enabled = true; //exit click eseménye
 	}
 
 

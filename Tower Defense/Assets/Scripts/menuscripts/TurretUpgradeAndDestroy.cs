@@ -41,18 +41,18 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
             {
                 if (hit.transform.tag == "basic_turret_u")
                 {
-					turretClick(turret_cost * upgrade_multyplier, true);
+					turretClick(turret_cost * upgrade_multyplier, true);  //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
                 }
                 if (hit.transform.tag == "basic_turret")
                 {
                     turretClick(build_script.turret_1_cost, false);
-					basicshooting_v = turret_v.GetComponent<BasicShooting> ();
+					basicshooting_v = turret_v.GetComponent<BasicShooting> (); //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
 
                 }
                 if (hit.transform.tag == "sniper_turret")
                 {
                     turretClick(build_script.sniper_tower_cost, false);
-					snipertowershooting_v = turret_v.GetComponent<SniperTowerShooting> ();
+					snipertowershooting_v = turret_v.GetComponent<SniperTowerShooting> (); //megnézi milyen turretre kattintasz a tag alapján, megadja az árát és hogy upgradolt-e
 
                 }
             }
@@ -63,15 +63,15 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 	void turretClick(int Cost, bool upgraded)
     {
         upgradedestroy.enabled = true;
-        movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z);
+        movingImage.transform.position = new Vector3(Input.mousePosition.x + 150, Input.mousePosition.y + 150, Input.mousePosition.z); //turrethez viszi a popupot
 
         turret_v = hit.transform.gameObject;
         turret_cost = Cost;
         destroy_text.text = "Destroy(" + Mathf.RoundToInt(Cost * multyplier) + " gold)";
-		upgrade_text.text = "Upgrade(" + Mathf.RoundToInt(Cost * upgrade_multyplier) + " gold)";
+		upgrade_text.text = "Upgrade(" + Mathf.RoundToInt(Cost * upgrade_multyplier) + " gold)"; //textek
 
 		upgrade_background.enabled = !upgraded;
-		upgrade_text.enabled = !upgraded;
+		upgrade_text.enabled = !upgraded; //kikapcsolja az upgrade opciót ha upgraded a torony
 
 		if (build_script.gold <  Mathf.RoundToInt(turret_cost * upgrade_multyplier)) {
 			upgrade_text.color = Color.gray;
@@ -80,7 +80,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 		} else {
 			upgrade_text.color = Color.yellow;
 			upgrade_color.highlightedColor = new Color (0, 255, 0);
-			upgrade_button.colors = upgrade_color;
+			upgrade_button.colors = upgrade_color; //a gold alapján állitja az upgrade text színét
 		}
     }
 
@@ -109,7 +109,7 @@ public class TurretUpgradeAndDestroy : MonoBehaviour {
 		close_window ();
 	}
 
-	public void targeting_click()
+	public void targeting_click() //targeting cseréléshez van 
 	{
 		print ("valami");
 		if (turret_v.transform.gameObject.tag == "basic_turret" || turret_v.transform.gameObject.tag == "basic_turret_u") {

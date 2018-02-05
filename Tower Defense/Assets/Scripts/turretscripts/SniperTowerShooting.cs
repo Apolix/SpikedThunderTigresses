@@ -31,10 +31,10 @@ public class SniperTowerShooting : MonoBehaviour {
 		} else {
 			targetingtext_v.text = "highest health";
 		}
-		print (highest_health_target);
+		print (highest_health_target); //targeting text szövege és targeting beállítása
 	}
 
-	void UpdateTarget()
+	void UpdateTarget() //megkeresi a potenciális enemyt a beéllitások alapján
 	{
 		enemies = GameObject.FindGameObjectsWithTag("enemy");
 		float health_index_valami_nem_tom;
